@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - GonowBus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-white" href="index.html"><i class="fa-solid fa-bus"></i> GonowBus ADMIN</a>
+            <div class="ms-auto">
+                <a href="index.html" class="btn btn-outline-light btn-sm">Public Site</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-4">
+        <!-- Stats -->
+        <div class="row g-3 mb-4">
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="icon"><i class="fa-solid fa-bus"></i></div>
+                    <div class="fw-bold fs-3" id="totalBuses">0</div>
+                    <div class="text-muted text-uppercase small">Total Buses</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="icon"><i class="fa-solid fa-ticket"></i></div>
+                    <div class="fw-bold fs-3" id="totalBookings">0</div>
+                    <div class="text-muted text-uppercase small">Total Bookings</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="icon"><i class="fa-solid fa-wallet"></i></div>
+                    <div class="fw-bold fs-3 text-success" id="totalRevenue">₹0</div>
+                    <div class="text-muted text-uppercase small">Total Revenue</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <div class="icon"><i class="fa-solid fa-users"></i></div>
+                    <div class="fw-bold fs-3" id="activeUsers">0</div>
+                    <div class="text-muted text-uppercase small">Active Users</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Management Sections -->
+        <div class="row">
+            <!-- Buses List -->
+            <div class="col-lg-6 mb-4">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-header bg-white p-3 d-flex justify-content-between align-items-center border-0">
+                        <h5 class="fw-bold mb-0">Buses Management</h5>
+                        <button class="btn btn-primary-theme btn-sm" data-bs-toggle="modal" data-bs-target="#addBusModal"><i class="fa-solid fa-plus"></i> Add Bus</button>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Bus / Type</th>
+                                        <th>Route</th>
+                                        <th>Location</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="busTableBody">
+                                    <tr><td colspan="4" class="text-center py-3"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bookings List -->
+            <div class="col-lg-6 mb-4">
+                <div class="card border-0 shadow-sm rounded-4 h-100">
+                    <div class="card-header bg-white p-3 border-0">
+                        <h5 class="fw-bold mb-0">Recent Bookings</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>PNR</th>
+                                        <th>Customer</th>
+                                        <th>Seats/Amount</th>
+                                        <th>Status/Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bookingTableBody">
+                                    <tr><td colspan="4" class="text-center py-3"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Add Bus Modal -->
+    <div class="modal fade" id="addBusModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-4 border-0">
+                <div class="modal-header border-0">
+                    <h5 class="fw-bold modal-title">Add New Bus</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addBusForm">
+                        <div class="mb-3">
+                            <label class="form-label">Bus Name</label>
+                            <input type="text" class="form-control" id="formBusName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Type</label>
+                            <select class="form-select" id="formBusType" required>
+                                <option value="AC Sleeper">AC Sleeper</option>
+                                <option value="Semi Sleeper">Semi Sleeper</option>
+                                <option value="Non AC">Non AC</option>
+                            </select>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label class="form-label">From City</label>
+                                <input type="text" class="form-control" id="formSource" required>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">To City</label>
+                                <input type="text" class="form-control" id="formDest" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <label class="form-label">Dep Time</label>
+                                <input type="time" class="form-control" id="formDepTime" required>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label">Arr Time</label>
+                                <input type="time" class="form-control" id="formArrTime" required>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label">Duration</label>
+                                <input type="text" class="form-control" id="formDuration" placeholder="e.g. 6h" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label class="form-label">Price (₹)</label>
+                                <input type="number" class="form-control" id="formPrice" required>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Total Seats</label>
+                                <input type="number" class="form-control" id="formTotalSeats" value="40" readonly>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary-theme w-100 fw-bold">Save Bus</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update Location Modal -->
+    <div class="modal fade" id="updateLocationModal" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content rounded-4 border-0">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="fw-bold modal-title">Update Location</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="updateLocationForm">
+                        <input type="hidden" id="locBusId">
+                        <div class="mb-3">
+                            <label class="form-label">Latitude</label>
+                            <input type="number" step="any" class="form-control" id="locLat" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Longitude</label>
+                            <input type="number" step="any" class="form-control" id="locLng" required>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Update Maps</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

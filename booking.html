@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Passenger Details - GonowBus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fa-solid fa-bus"></i> GonowBus</a>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        
+        <div class="alert alert-warning d-flex align-items-center mb-4" id="bookingTimerAlert">
+            <i class="fa-solid fa-hourglass-half fa-spin fs-4 me-3"></i>
+            <div>
+                <strong>Seats Held!</strong> Please complete your booking within 
+                <span id="bookingHoldTimer" class="fw-bold fs-5 text-danger ms-1">05:00</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mb-4">
+                <div class="card border-0 shadow-sm rounded-4 p-4">
+                    <h4 class="fw-bold mb-4">Passenger Details</h4>
+                    <form id="bookingForm" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control form-control-lg" id="passengerName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Mobile Number</label>
+                                <input type="tel" class="form-control form-control-lg" id="passengerPhone" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Age</label>
+                                <input type="number" class="form-control form-control-lg" id="passengerAge" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 pt-3 border-top text-end">
+                            <button type="submit" class="btn btn-primary-theme btn-lg px-5 fw-bold" id="confirmBookingBtn">PAY & CONFIRM BOOKING</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 bg-light">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-4">Booking Summary</h5>
+                        <div id="summaryDetails">
+                            <!-- populated by JS -->
+                            <h6 id="bookBusName" class="fw-bold mb-1">Loading...</h6>
+                            <p id="bookRoute" class="text-muted mb-3"></p>
+                            
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Date</span>
+                                <span class="fw-semibold" id="bookDate">-</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Seats</span>
+                                <span class="fw-semibold" id="bookSeats">-</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fs-5 fw-bold">Total Amount</span>
+                                <span class="fs-5 fw-bold text-success" id="bookTotal">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 p-4 text-center">
+                <div class="modal-body">
+                    <div class="text-success mb-3">
+                        <i class="fa-solid fa-circle-check" style="font-size: 60px;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-3">Booking Confirmed!</h3>
+                    <p class="text-muted mb-4">Your ticket has been booked successfully.</p>
+                    
+                    <div class="bg-light p-3 rounded-3 mb-4">
+                        <p class="mb-1 text-muted small">Your PNR Number</p>
+                        <h2 class="fw-bold text-primary-theme font-monospace mb-0" id="successPnr">---</h2>
+                    </div>
+                    <a href="status.html" class="btn btn-primary-theme btn-lg w-100 mb-2">View Ticket</a>
+                    <a href="index.html" class="btn btn-light w-100">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

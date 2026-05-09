@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham Patil | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">SP.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="home-container">
+            <div class="home-content">
+                <h1>Hi, I'm <span class="highlight">Shubham Patil</span></h1>
+                <h2>Aspiring Software Developer</h2>
+                <p>I am a passionate Computer Application student currently learning web development and C++. I enjoy solving real-world problems and building user-friendly applications. I have developed projects like an Attendance System, Student Notes Website, and simple browser-based games, while also leveraging AI tools to improve productivity and enhance development efficiency. My goal is to become a skilled software developer and create impactful digital solutions.</p>
+                <a href="#projects" class="btn">View Projects</a>
+            </div>
+            <div class="home-image">
+                <div class="profile-img-wrapper">
+                    <img src="profile.jpg" alt="Shubham Patil">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>I am a student currently learning web development and C++. I love solving problems and turning ideas into reality using code. My goal is to build software that makes a real impact.</p>
+            <div class="education">
+                <h3>Education</h3>
+                <div class="edu-card">
+                    <h4>Bachelor of Computer Application</h4>
+                    <p>Expected Graduation: 2028</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">A collection of technologies, methodologies, and tools I leverage to build functional, scalable, and visually appealing applications.</p>
+        
+        <div class="skills-container">
+            <!-- Programming Category -->
+            <div class="skill-category">
+                <h3 class="category-title">Programming</h3>
+                <div class="skills-grid">
+                    <div class="skill-card" data-tooltip="Object-oriented programming, data structures, and algorithms">
+                        <i class="fa-solid fa-code skill-icon"></i>
+                        <h3>C++</h3>
+                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-card" data-tooltip="ES6+, DOM manipulation, and asynchronous logic">
+                        <i class="fa-brands fa-js skill-icon"></i>
+                        <h3>JavaScript</h3>
+                        <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-card" data-tooltip="Analytical thinking and technical troubleshooting">
+                        <i class="fa-solid fa-puzzle-piece skill-icon"></i>
+                        <h3>Problem Solving</h3>
+                        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development Category -->
+            <div class="skill-category">
+                <h3 class="category-title">Web Development</h3>
+                <div class="skills-grid">
+                    <div class="skill-card" data-tooltip="Semantic markup and accessible web structures">
+                        <i class="fa-brands fa-html5 skill-icon"></i>
+                        <h3>HTML</h3>
+                        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-card" data-tooltip="Modern styling, flexbox, grid, and animations">
+                        <i class="fa-brands fa-css3-alt skill-icon"></i>
+                        <h3>CSS</h3>
+                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-card" data-tooltip="Ensuring perfect alignment across mobile and desktop devices">
+                        <i class="fa-solid fa-mobile-screen-button skill-icon"></i>
+                        <h3>Responsive Design</h3>
+                        <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools Category -->
+            <div class="skill-category">
+                <h3 class="category-title">Tools</h3>
+                <div class="skills-grid">
+                    <div class="skill-card" data-tooltip="Version control and collaboration">
+                        <i class="fa-brands fa-git-alt skill-icon"></i>
+                        <h3>Git</h3>
+                        <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-card" data-tooltip="Source code management and project hosting">
+                        <i class="fa-brands fa-github skill-icon"></i>
+                        <h3>GitHub</h3>
+                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-card" data-tooltip="Using AI tools for rapid problem-solving">
+                        <i class="fa-solid fa-wand-magic-sparkles skill-icon"></i>
+                        <h3>AI-Assisted Dev</h3>
+                        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-card" data-tooltip="Effective collaboration with language models">
+                        <i class="fa-solid fa-terminal skill-icon"></i>
+                        <h3>Prompt Engineering</h3>
+                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://placehold.co/600x400/1e2028/3b82f6?text=Edu+Attendance+System" alt="Edu Attendance System Preview">
+                    <div class="project-overlay">
+                        <div class="overlay-buttons">
+                            <a href="https://edutrack-attendance-d44f3.web.app/" class="btn btn-small"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            <a href="https://console.firebase.google.com/u/0/project/edutrack-attendance-d44f3/firestore/databases/-default-/data/~2Fattendance~2F0aZj1DktwtCZHyJBW4WV" class="btn btn-small btn-outline"><i class="fa-brands fa-github"></i> GitHub Source</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Edu Attendance System</h3>
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Firebase</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Automated student attendance tracking with secure data storage.</li>
+                        <li>Real-time data synchronization using Firebase.</li>
+                        <li>User-friendly dashboard for managing attendance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://placehold.co/600x400/1e2028/3b82f6?text=EduCatalog" alt="EduCatalog Preview">
+                    <div class="project-overlay">
+                        <div class="overlay-buttons">
+                            <a href="https://educatalog-saas.vercel.app/" class="btn btn-small"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            <a href="https://github.com/shubhpatil28/educatalog-saas" class="btn btn-small btn-outline"><i class="fa-brands fa-github"></i> GitHub Source</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>EduCatalog</h3>
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Platform to explore and organize educational resources.</li>
+                        <li>Categorized content for easy navigation.</li>
+                        <li>Clean and responsive user interface.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://placehold.co/600x400/1e2028/3b82f6?text=Simple+Game" alt="Simple Game Preview">
+                    <div class="project-overlay">
+                        <div class="overlay-buttons">
+                            <a href="https://shubhpatil28.github.io/SimpleGame/" class="btn btn-small"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                            <a href="https://github.com/shubhpatil28/SimpleGame" class="btn btn-small btn-outline"><i class="fa-brands fa-github"></i> GitHub Source</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Simple Game</h3>
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <ul class="project-features">
+                        <li>Interactive browser-based game using DOM manipulation.</li>
+                        <li>Dynamic score tracking system.</li>
+                        <li>Smooth and responsive gameplay.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-email">Reach me at: <a href="mailto:shubhampatil282487@gmail.com">shubhampatil282487@gmail.com</a></p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Shubham Patil. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GonowBus - Modern Bus Ticket Booking</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fa-solid fa-bus"></i> GonowBus</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="status.html">Track/Cancel Ticket</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-banner text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Book Your Bus Tickets</h1>
+            <p class="fs-5 opacity-75">India's leading modern bus booking platform</p>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="container search-container">
+        <div class="search-card">
+            <form id="searchBusForm" class="row g-3 align-items-end">
+                <div class="col-md-4 position-relative">
+                    <label class="form-label text-muted fw-semibold">From City</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0"><i class="fa-solid fa-location-dot text-primary-theme"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0 form-control-lg" id="sourceCity" placeholder="e.g. Chalisgaon" autocomplete="off" required>
+                    </div>
+                    <div class="suggestions-box" id="sourceSuggestions"></div>
+                </div>
+                
+                <div class="col-md-4 position-relative">
+                    <label class="form-label text-muted fw-semibold">To City</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0"><i class="fa-solid fa-location-dot text-primary-theme"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0 form-control-lg" id="destCity" placeholder="e.g. Nashik" autocomplete="off" required>
+                    </div>
+                    <div class="suggestions-box" id="destSuggestions"></div>
+                </div>
+                
+                <div class="col-md-2">
+                    <label class="form-label text-muted fw-semibold">Travel Date</label>
+                    <input type="date" class="form-control form-control-lg" id="travelDate" required>
+                </div>
+                
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary-theme btn-lg w-100 fw-bold">SEARCH BUSES</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="container my-5">
+        <div id="resultHeader" style="display: none;" class="mb-4">
+            <h3 class="fw-bold">Available Buses</h3>
+            <p class="text-muted" id="resultSubtitle"></p>
+        </div>
+        
+        <div id="busListContainer">
+            <!-- Dynamic Bus Cards will appear here -->
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
