@@ -1,0 +1,19 @@
+Shubham Patil
+Full Stack Developer
+
+Contact: shubhampatil282487@gmail.com
+Location: India
+
+Summary:
+Passionate developer focused on building practical web applications, polished user interfaces, and modern digital experiences.
+
+Skills:
+HTML, CSS, JavaScript, C++, Firebase, Git, GitHub, Responsive Design, AI-assisted development
+
+Projects:
+- Edu Attendance System
+- EduCatalog
+- Simple Game
+
+Education:
+Bachelor of Computer Application (Expected Graduation: 2028)
